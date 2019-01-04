@@ -1,0 +1,178 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+$purple: hsl(275, 87%, 45%);
+$purple-invert: findColorInvert($purple);
+
+$primary: rgb(240, 150, 70);
+
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+
+$addColors: (
+        "purple":($purple, $purple-invert),
+);
+
+$colors: map-merge($colors, $addColors);
+
+@import '../node_modules/bulma/bulma';
+@import '~bulma-extensions/dist/css/bulma-extensions.min.css';
+//@import '~bulma-extensions/bulma-carousel/dist/css/bulma-carousel.min.css';
+
+// Header Zone ======================================
+header {
+  font-family: "Roboto", sans-serif;
+}
+
+button.language_picker {
+  border: none;
+  text-decoration: none;
+  padding: 1em;
+}
+
+button.language_picker:hover {
+  cursor: pointer;
+  background-color: #292929;
+}
+
+button.language_picker.activated_language {
+  height: 100%;
+}
+
+.nav-social-media {
+  padding: 5px 10px 0px;
+}
+
+// Body Zone ======================================
+
+:root {
+  --line-width: 40%;
+}
+
+.bgimg {
+  min-height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.project-card {
+  padding: 1rem;
+  background-color: white;
+  -webkit-filter: brightness(100%);
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.project-card:hover {
+  -webkit-filter: brightness(95%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.project-columns {
+  padding: 5rem;
+}
+
+.body-social-media {
+  padding: 0 10px 0;
+  font-size: 1.5em;
+}
+
+.home-title {
+  color: white;
+  font-size: 85px;
+  animation-duration: 1.5s;
+  animation-name: slidefromTop;
+  padding-bottom: 15px;
+}
+
+.home-desc {
+  color: white;
+  padding-top: 20px;
+  animation-duration: 1.5s;
+  animation-name: slidefromBot
+}
+
+.home-line {
+  background-color: white;
+  animation-duration: 1.5s;
+  margin: auto;
+  width: var(--line-width);
+  animation-name: unlargeAnimation
+}
+
+.content-home-page {
+  width: 100%;
+}
+
+// Footer Zone ======================================
+$footer-background-color: #fafafa;
+
+.footer {
+  padding: 2rem 1.5rem 1rem; // change he padding to make the footer smaller so that it doesn't take too much in the end of the page.
+}
+
+// General Zone ======================================
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Animations ======================================
+
+@keyframes slidefromTop {
+  from {
+    opacity: 0;
+    padding-bottom: 30%;
+  }
+  to {
+    opacity: 1;
+    padding-bottom: 15px;
+  }
+}
+
+@keyframes slidefromBot {
+  from {
+    opacity: 0;
+    padding-top: 30%;
+  }
+  to {
+    opacity: 1;
+    padding-top: 20px;
+  }
+}
+
+@keyframes unlargeAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--line-width);
+  }
+}
+
+// hidden parts:
+
+div.layout > div > header {
+  visibility: hidden;
+  display: none;
+}
+

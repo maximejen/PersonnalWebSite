@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "projects": "Projects"
+  },
+  "body": {
+    "main-description": "Computer Science Student at {Epitech.} Strasbourg, France",
+    "project": {
+      "title": "My Projects",
+      "subtitle": "You'll find here a list of my projects.",
+      "description": "Description"
+    },
+    "technology": {
+      "title": "Technologies that I used",
+      "subtitle": "Here are the technologies that I used in all my projects"
+    }
+  },
+  "login": {
+    "password": "Password",
+    "email": "Email",
+    "incorrect_password": "Incorrect password.",
+    "incorrect_email": "Incorrect email."
+  },
+  "footer": {
+    "madein": "Made in"
+  },
+  "from": "from",
+  "to": "to"
+}

@@ -1,0 +1,16 @@
+# import Project from './generated/prisma.graphql'
+# import Technologies from './generated/prisma.graphql'
+# import TranslatedString from './generated/prisma.graphql'
+# import TechnologyType from './generated/prisma.graphql'
+# import Image from './generated/prisma.graphql'
+
+type Query {
+    project(id: ID!): Project!
+    projects: [Project!]!
+    technologies: [Technology!]!
+    technologyTypes: [TechnologyType!]!
+    images: [Image!]!
+}
+
+#type Mutation {
+#}

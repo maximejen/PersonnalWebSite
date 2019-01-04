@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "projects": "Projets"
+  },
+  "body": {
+    "main-description": "Étudiant en informatique à {Epitech.} Strasbourg",
+    "project": {
+      "title": "Mes Projets",
+      "subtitle": "Vous trouverez ci-dessous une liste de projets que j'ai réalisé",
+      "description": "Description"
+    },
+    "technology": {
+      "title": "Technologies que j'ai utilisé",
+      "subtitle": "Voici la liste des technologies que j'ai utilisé au cours de mes projets"
+    }
+  },
+  "login": {
+    "password": "Mot de passe",
+    "email": "Email",
+    "incorrect_password": "Mot de passe incorrect.",
+    "incorrect_email": "Email incorrect."
+  },
+  "footer": {
+    "madein": "Créé en"
+  },
+  "from": "du",
+  "to": "au"
+}

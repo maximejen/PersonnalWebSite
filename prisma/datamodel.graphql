@@ -1,0 +1,61 @@
+type Project {
+    id: ID! @unique
+    name: String!
+    description: TranslatedString! @relation(name: "DescriptionOfProject" onDelete: CASCADE)
+    complete_description: TranslatedString! @relation(name: "CompleteDescriptionOfProject" onDelete: CASCADE)
+    technologies: [Technology!]! @relation(name: "TechnologiesOfProject")
+    images: [Image!]! @relation(name: "ImagesOfProject" onDelete: CASCADE)
+    github_link: String
+    testing_link: String
+    beginning_date: DateTime
+    ending_date: DateTime
+}
+
+type Image {
+    id: ID! @unique
+    alt: String!
+    src: String!
+}
+
+type Technology {
+    id: ID! @unique
+    name: String!
+    description: TranslatedString! @relation(name: "DescriptionOfTechnology" onDelete: CASCADE)
+    projects: [Project!]! @relation(name: "ProjectsOfTechnology")
+    more_info_link: String
+    type: TechnologyType
+}
+
+type TechnologyType {
+    id: ID! @unique
+    slug_name: String!
+    name: TranslatedString! @relation(name: "NameOfTechnologyType")
+    technologies: [Technology!]!
+}
+
+type TranslatedString {
+    id: ID! @unique
+    en: String!
+    fr: String!
+}
+
+type User {
+    id: ID! @unique
+    email: String!
+    passwd: String!
+    name: String!
+    token: String
+}
+
+type PersonnalInformations {
+    email: String
+    birthDate: DateTime
+    phoneNumber: String
+    actualJob: String
+}
+
+type Hobby {
+    name: TranslatedString! @relation(name: "NameOfHobby")
+    icon: String
+    description: TranslatedString! @relation(name: "DescriptionOfHobby")
+}
