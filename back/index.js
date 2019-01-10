@@ -169,4 +169,4 @@ server.post('/logged', async function (req, res) {
         });
 });
 
-server.start(() => console.log(`GraphQL server is running on http://localhost:4000`));
+server.start(() => console.log(`GraphQL server is running on http://back:4000`));
