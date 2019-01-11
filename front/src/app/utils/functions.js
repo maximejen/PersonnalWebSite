@@ -31,7 +31,7 @@ export function truncateOnWord(str, limit) {
 export async function isLogged() {
     if (sessionStorage.getItem("userId") === null || sessionStorage.getItem("userId") === "null" || sessionStorage.getItem("userToken") === null || sessionStorage.getItem("userToken") === "null")
         return false;
-    const url = "http://" + server_ip + ":4000/logged";
+    const url = "http://164.132.227.234:4000/logged";
     const data = JSON.stringify({
         id: sessionStorage.getItem("userId"),
         token: sessionStorage.getItem("userToken")

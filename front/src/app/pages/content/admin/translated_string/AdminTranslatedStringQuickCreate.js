@@ -49,7 +49,7 @@ class AdminTranslatedStringQuickCreate extends Component {
 
         buildPrismaProvider({
             clientOptions: {
-                uri: "http://" + server_ip + ":4466"
+                uri: "http://164.132.227.234:4466"
             }
         }).then(dataProvider => {
             fetchStart();
