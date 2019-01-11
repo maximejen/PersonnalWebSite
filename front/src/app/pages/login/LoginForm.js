@@ -2,6 +2,9 @@ import React from "react";
 import {Redirect} from "react-router-dom";
 import PropTypes from "prop-types";
 import {translate} from "react-i18next";
+
+import {server_ip} from "../../../App";
+
 const sha512 = require('sha512');
 
 class LoginForm extends React.Component {
@@ -33,7 +36,7 @@ class LoginForm extends React.Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-        const url = "http://164.132.227.234:4000/login";
+        const url = "http://" + server_ip + ":4000/login";
         let hash = sha512(this.state.password);
         const data = JSON.stringify({
             email: this.state.email,
@@ -85,7 +88,7 @@ class LoginForm extends React.Component {
                 borderRadius: "10px",
                 width: "20em"
             }}>
-                <form action={"http://164.132.227.234:4000/login"} method={"POST"} onSubmit={this.handleSubmit}>
+                <form action={"http://" + server_ip + ":4000/login"} method={"POST"} onSubmit={this.handleSubmit}>
                     <div className={"field"}>
                         <label className={"is-full label"}>
                             {this.props.t('login.email', {framework: "react-i18next"})}

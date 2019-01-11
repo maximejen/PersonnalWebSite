@@ -13,9 +13,10 @@ import { ApolloProvider } from 'react-apollo';
 
 import ApolloClient from "apollo-boost";
 import i18n from "i18next";
+import {server_ip} from "../App";
 
 const client = new ApolloClient({
-    uri: "http://164.132.227.234:4000/"
+    uri: "http://" + server_ip + ":4000/"
 });
 
 class Layout extends React.Component {

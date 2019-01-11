@@ -22,6 +22,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 
 import buildPrismaProvider from '../../../../utils/adaptator/index';
+import {server_ip} from "../../../../../App";
 
 class AdminTranslatedStringQuickCreate extends Component {
     state = {
@@ -48,7 +49,7 @@ class AdminTranslatedStringQuickCreate extends Component {
 
         buildPrismaProvider({
             clientOptions: {
-                uri: "http://164.132.227.234:4466"
+                uri: "http://" + server_ip + ":4466"
             }
         }).then(dataProvider => {
             fetchStart();

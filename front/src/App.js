@@ -10,3 +10,5 @@ class App extends React.Component {
 }
 
 export default App
+
+export const server_ip = '164.132.227.234';
