@@ -3,6 +3,7 @@
 # import TranslatedString from './generated/prisma.graphql'
 # import TechnologyType from './generated/prisma.graphql'
 # import Image from './generated/prisma.graphql'
+# import User from './generated/prisma.graphql'
 
 type Query {
     project(id: ID!): Project!
@@ -10,7 +11,7 @@ type Query {
     technologies: [Technology!]!
     technologyTypes: [TechnologyType!]!
     images: [Image!]!
-    users: [Users!]!
+    users: [User!]!
 }
 
 #type Mutation {
