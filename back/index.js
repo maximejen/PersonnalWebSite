@@ -117,7 +117,9 @@ server.post('/login', async function (req, res) {
         .then(response => response.json())
         .then(response => {
             const users = response.data.users;
+            console.log(users);
             const user = users.find(elem => elem.email === req.body.email);
+            console.log(user);
             if (user === undefined)
                 res.status(401).send({message: "incorrect email"});
             else if (user.passwd !== req.body.password)
