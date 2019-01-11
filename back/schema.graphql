@@ -10,6 +10,7 @@ type Query {
     technologies: [Technology!]!
     technologyTypes: [TechnologyType!]!
     images: [Image!]!
+    users: [Users!]!
 }
 
 #type Mutation {

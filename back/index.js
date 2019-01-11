@@ -24,6 +24,9 @@ const resolvers = {
         },
         technologyTypes: (_, args, context, info) => {
             return context.prisma.query.technologyTypes({args}, info);
+        },
+        users: (_, args, context, info) => {
+            return context.prisma.query.users({args}, info);
         }
     },
     // Mutation: {
