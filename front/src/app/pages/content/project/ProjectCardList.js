@@ -16,6 +16,10 @@ const GET_PROJECTS = gql`
                 fr
                 en
             }
+            complete_description {
+                fr
+                en
+            }
             technologies {
                 name
             }

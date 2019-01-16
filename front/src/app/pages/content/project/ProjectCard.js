@@ -12,13 +12,12 @@ class ProjectCard extends React.Component {
 
 	render() {
 	    let descr = this.props.project.description;
-	    let complete_descr = this.props.project.description;
+	    let complete_descr = this.props.project.complete_description;
 
         let technologiesInHTML = [];
         this.props.project.technologies.forEach(function (element, index) {
             technologiesInHTML.push(<div key={index} className="tag is-primary column is-2" style={{
-                marginLeft: "0.5em",
-                marginRight: "0.5em"
+                margin: "0.5em"
             }}
             >{element.name}</div>);
         });
@@ -43,7 +42,7 @@ class ProjectCard extends React.Component {
                         <p className={"subtitle is-6"}>
                         { truncateOnWord(getCorrectTranslatedString(this.props.locale, complete_descr), 200) }
                         </p>
-                        <div className={'columns'}>
+                        <div className={'columns is-multiline'}>
                             {technologiesInHTML}
                         </div>
                     </div>
