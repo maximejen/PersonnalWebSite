@@ -26,7 +26,7 @@ class ProjectCard extends React.Component {
 		return (
             <NavLink className="is-one-third column project-card" to={"/projects/" + this.props.project.id}>
                 <div className={"card-image"}>
-                    <figure className={"image is-4by3"}>
+                    <figure className={"image is-16by9"}>
                         <img src={this.props.project.images[0].src} alt={this.props.project.images[0].alt}/>
                     </figure>
                 </div>

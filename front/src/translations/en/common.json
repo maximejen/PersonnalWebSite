@@ -7,7 +7,8 @@
     "project": {
       "title": "My Projects",
       "subtitle": "You'll find here a list of my projects.",
-      "description": "Description"
+      "description": "Description",
+      "technologies": "Used technologies"
     },
     "technology": {
       "title": "Technologies that I used",
