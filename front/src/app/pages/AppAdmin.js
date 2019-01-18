@@ -1,10 +1,9 @@
 import React from 'react';
 import {Admin, Resource} from 'react-admin';
-import buildPrismaProvider from '../utils/adaptator/index';
 
 import {server_ip} from "../../App";
 
-// import buildPrismaProvider from '../utils/ra-data-prisma/src/index';
+import buildPrismaProvider from '../utils/adaptator/index';
 import {createMuiTheme} from '@material-ui/core/styles';
 
 import primary from '@material-ui/core/colors/deepOrange';
@@ -47,7 +46,7 @@ import PropTypes from "prop-types";
 import {Redirect} from "react-router-dom";
 import {isLogged} from "../utils/functions";
 
-export let dP = null;
+// import buildOpenCrudProvider from 'ra-data-opencrud';
 
 class AppAdmin extends React.Component {
 
@@ -71,7 +70,6 @@ class AppAdmin extends React.Component {
                 uri: "http://164.132.227.234:4466"
             }
         }).then(dataProvider => {
-            dP = dataProvider;
             this.setState({dataProvider: dataProvider});
         });
     }

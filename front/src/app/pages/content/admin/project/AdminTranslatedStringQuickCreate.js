@@ -21,8 +21,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 
+// import buildOpenCrudProvider from 'ra-data-opencrud';
 import buildPrismaProvider from '../../../../utils/adaptator/index';
-import {server_ip} from "../../../../../App";
 
 class AdminTranslatedStringQuickCreate extends Component {
     state = {
@@ -40,29 +40,28 @@ class AdminTranslatedStringQuickCreate extends Component {
 
     handleSaveClick = () => {
         const {submit} = this.props;
-        submit('translated-string-quick-create');
+        submit('translatedstring-quick-create');
     };
 
     handleSubmit = values => {
         const {change, crudGetMatching, fetchStart, fetchEnd, showNotification} = this.props;
-
+        fetchStart();
 
         buildPrismaProvider({
             clientOptions: {
                 uri: "http://164.132.227.234:4466"
             }
         }).then(dataProvider => {
-            fetchStart();
             dataProvider(CREATE, 'TranslatedString', {data: values})
                 .then(({data}) => {
                     crudGetMatching(
                         'TranslatedString',
-                        'description@translated_string_id',
+                        'TranslatedString@' + this.props.source,
                         { page: 1, perPage: 25 },
-                        { field: 'id' },
+                        { field: 'id', order: 'DESC' },
                         {}
                     );
-                    change(REDUX_FORM_NAME, 'translated_string_id', data.id);
+                    change(REDUX_FORM_NAME, this.props.source, data.id);
                     this.setState({showDialog: false});
                 })
                 .catch(error => {
@@ -89,10 +88,10 @@ class AdminTranslatedStringQuickCreate extends Component {
                     onClose={this.handleCloseClick}
                     aria-label="Create translated string"
                 >
-                    <DialogTitle>Create post</DialogTitle>
+                    <DialogTitle>Create Translated String</DialogTitle>
                     <DialogContent>
                         <SimpleForm
-                            form="translated-string-quick-create"
+                            form="translatedstring-quick-create"
                             resource="TranslatedString"
                             onSubmit={this.handleSubmit}
                             toolbar={null}
@@ -123,7 +122,7 @@ class AdminTranslatedStringQuickCreate extends Component {
 }
 
 const mapStateToProps = state => ({
-    isSubmitting: isSubmitting('translated-string-quick-create')(state)
+    isSubmitting: isSubmitting('translatedstring-quick-create')(state)
 });
 
 const mapDispatchToProps = {
