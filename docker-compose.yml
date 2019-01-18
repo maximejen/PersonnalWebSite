@@ -37,4 +37,3 @@ services:
       - "4000:4000"
 volumes:
   postgres:
-x
