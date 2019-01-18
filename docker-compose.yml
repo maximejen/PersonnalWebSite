@@ -30,10 +30,11 @@ services:
   front:
     build: ./front
     ports:
-      - "80:3000"
+      - "3000:3000"
   back:
     build: ./back
     ports:
       - "4000:4000"
 volumes:
   postgres:
+x
